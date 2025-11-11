@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- Location Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Phone Call Permission -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label=" "
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SchoolBusParent">
+
+        <!-- Parent Login Activity (MAIN LAUNCHER) -->
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.SchoolBusParent.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ParentLoginActivity"
+            android:exported="false"/>
+
+        <!-- Parent Main Activity - With Toolbar -->
+        <activity
+            android:name=".ParentMainActivity"
+            android:exported="false"
+             />
+
+        <!-- Parent Profile Activity - With Toolbar -->
+        <activity
+            android:name=".ParentProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SchoolBusParent" />
+
+        <activity
+            android:name=".ParentNotificationHistoryActivity"
+            android:label="Notification History"
+            android:parentActivityName=".ParentMainActivity"
+            android:theme="@style/Theme.SchoolBusParent" />
+
+        <activity android:name=".ChangePasswordActivity"
+            android:parentActivityName=".ParentProfileActivity"/>
+
+        <!-- FCM Messaging Service -->
+        <service
+            android:name=".services.ParentFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDGBzaHtkkJjTIEirI92R_xBLVv3yKkD6A" />
+
+        <!-- Firebase Cloud Messaging AutoInit -->
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="true" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="true" />
+
+    </application>
+
+</manifest>

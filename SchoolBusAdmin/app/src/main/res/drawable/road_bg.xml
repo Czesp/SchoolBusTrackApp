@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="1200dp"
+    android:height="400dp"
+    android:viewportWidth="1200"
+    android:viewportHeight="400">
+
+    <!-- Road Base -->
+    <path
+        android:pathData="M0,300 L1200,300 L1200,400 L0,400 Z"
+        android:fillColor="@color/accent_blue"
+        android:fillAlpha="0.8"/>
+
+    <!-- Road Markings -->
+    <path
+        android:pathData="M0,350 L1200,350"
+        android:strokeColor="@color/white"
+        android:strokeWidth="4"
+        android:strokeAlpha="0.6"/>
+
+    <!-- Dashed Center Line -->
+    <path
+        android:pathData="M0,325 L50,325 M100,325 L150,325 M200,325 L250,325 M300,325 L350,325 M400,325 L450,325 M500,325 L550,325 M600,325 L650,325 M700,325 L750,325 M800,325 L850,325 M900,325 L950,325 M1000,325 L1050,325 M1100,325 L1150,325"
+        android:strokeColor="@color/white"
+        android:strokeWidth="3"
+        android:strokeAlpha="0.8"/>
+
+    <!-- Side Markings -->
+    <path
+        android:pathData="M0,375 L1200,375"
+        android:strokeColor="@color/white"
+        android:strokeWidth="2"
+        android:strokeAlpha="0.4"/>
+
+</vector>

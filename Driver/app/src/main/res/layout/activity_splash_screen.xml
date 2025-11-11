@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:id="@+id/roadmap"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/roadmap"/>
+
+    <ImageView
+        android:id="@+id/bus"
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:src="@drawable/bus"
+        android:layout_alignBottom="@id/roadmap"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"/>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track"
+        android:textColor="#FFA000"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:layout_below="@id/bus"
+        android:fontFamily="@font/moohlahlah"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/descrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Locate Relax Repeat"
+        android:layout_below="@id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:textColor="#2196F3"/>
+
+</RelativeLayout>

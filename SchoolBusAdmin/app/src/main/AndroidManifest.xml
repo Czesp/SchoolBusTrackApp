@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SchoolBusAdmin"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ADD THIS ACTIVITY -->
+        <activity android:name=".AdminLoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RouteListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CreateRouteActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BusListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AdminLiveTrackingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CreateBusActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EditBusActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".UserListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditUserActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EditRouteActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".AdminNotificationHistoryActivity"
+            android:label="Notification History"
+            android:parentActivityName=".AdminDashboardActivity"/>
+
+        <activity
+            android:name=".AdminProfileActivity"
+            android:label="Admin Profile"
+            android:parentActivityName=".AdminDashboardActivity" />
+
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:label="Change Password"
+            android:parentActivityName=".AdminProfileActivity" />
+
+        <!-- FCM Messaging Service -->
+        <service
+            android:name=".services.AdminFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDGBzaHtkkJjTIEirI92R_xBLVv3yKkD6A" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Firebase Cloud Messaging AutoInit -->
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="true" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="true" />
+
+    </application>
+</manifest>
